@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
+import os
 
 
 class Status(models.Model):
@@ -12,5 +14,6 @@ class Status(models.Model):
     print_date = models.DateTimeField()
 
     def __str__(self):
-        return self.nome_foto
-'''Status.objects.create(author=me,nome_foto='lala.jpg',nome_foto_profile='lala2.jpg',username='adidi',post_date='2018-01-01 10:00',download_date='2018-01-02 11:00',print_date='2018-01-03 12:00')'''
+        return (self.nome_foto)
+'''Status.objects.create(author=me,nome_foto='lala.jpg',nome_foto_profile='lala2.jpg',username='adidi',post_date='2018-01-01 10:00',download_date='2018-01-02 11:00',print_date='2018-01-03 12:00')
+me = User.objects.get(username='admin')'''
